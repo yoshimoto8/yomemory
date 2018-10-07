@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem "faraday"
 gem "json"
+gem "qiita"
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
