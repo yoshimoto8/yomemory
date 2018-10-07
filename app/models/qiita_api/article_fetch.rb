@@ -1,17 +1,17 @@
 module QiitaApi
   class ArticleFetch
     def initialize(args)
-      @response_body = fetch_response_body(args['client'], args['page'], args['per_page'] )
+      @response_body = fetch_response_body(args[:client], args[:page], args[:per_page] )
     end
 
-    # get user title of article
-    def get_title
-      @response_body["title"]
-    end
-
-    # get user url of article
-    def get_url
-      @response_body["url"]
+    def get_article
+      result_bodies = @response_body.map do |item|
+        {
+          title: item['title'],
+          url: item['url']
+        }
+      end
+      result_bodies
     end
 
     private

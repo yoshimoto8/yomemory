@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
   def index
-    Article.qiita_article
+    qiita_article = Article.qiita_article
   end
 end

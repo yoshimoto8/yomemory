@@ -10,6 +10,7 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem "faraday"
 gem "json"
 gem "qiita"
+gem 'rack-cors', :require => 'rack/cors'
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'

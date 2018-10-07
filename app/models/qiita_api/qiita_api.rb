@@ -11,6 +11,5 @@ module QiitaApi
     def fetch
       ArticleFetch.new({client: @client, page: 1, per_page: 100})
     end
-
   end
 end
