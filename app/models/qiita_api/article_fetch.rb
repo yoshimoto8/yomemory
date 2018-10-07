@@ -1,4 +1,4 @@
-module Qiita
+module QiitaApi
   class ArticleFetch
     def initialize(args)
       @response_body = fetch_response_body(args['client'], args['page'], args['per_page'] )
