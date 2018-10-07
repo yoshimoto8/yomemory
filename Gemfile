@@ -11,6 +11,10 @@ gem "faraday"
 gem "json"
 gem "qiita"
 group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem "better_errors", "~> 2.5"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
