@@ -1,45 +1,36 @@
 //@flow
-import "babel-polyfill";
+import "@babel/polyfill";
 import React from "react";
 import request from "superagent";
 import { connect } from "react-redux";
-
+import { getArticles } from "../../domain/articles";
 type State = {
   articles: Array<Object>
 };
 
-class Article extends React.Component<void, State> {
-  constructor() {
-    super();
-    this.state = {
-      articles: []
-    };
-  }
-  componentDidMount() {
-    console.log(this.fetchArticles());
-  }
+type Props = {
+  articles: any
+};
 
+class Article extends React.Component<Props, State> {
   async fetchArticles() {
-    const endPoint = "http://localhost:3000/articles";
-    try {
-      const res = await request.get(endPoint);
-      console.log(res);
-      return res.body;
-    } catch (error) {
-      console.log(error);
-      return {};
-    }
+    return await getArticles();
   }
-
   render() {
-    return <div>¥</div>;
+    const articles = this.fetchArticles();
+    console.log(articles);
+    return <div>a</div>;
   }
 }
 
-const mapDispatchToProps = (dispatch: any) => ({});
-const mapStateToProps = (state: any) => ({});
+export default Article;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Article);
+// const mapDispatchToProps = (dispatch: any) => ({});
+// const mapStateToProps = (state: any) => ({
+//   articles: getArticles()
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(Article);
