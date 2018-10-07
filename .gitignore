@@ -24,4 +24,6 @@
 
 # フロントらへん
 /frontend/node_modules
+/frontend/lib
+/frontend/flow-typed
 /.env
